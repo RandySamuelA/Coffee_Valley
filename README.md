@@ -2,12 +2,6 @@
 
 Aplikasi web Coffee Valley menggunakan Laravel + XAMPP.
 
-## Requirements
-- PHP >= 8.1
-- MySQL
-- Composer
-- XAMPP
-
 ## Instalasi
 
 1. Clone repository
