@@ -10,7 +10,12 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $data = DB::table('beans')->get();
-        return view('home', compact('data'));
+        $dailyBean = DB::table('daily_bean')
+            ->join('beans', 'daily_bean.bean_id', '=', 'beans.id')
+            ->where('daily_bean.sale_price', '>=', 0)
+            ->select('beans.bean_name', 'beans.description', 'daily_bean.sale_price')
+            ->first();
+
+        return view('home', compact('dailyBean'));
     }
 }

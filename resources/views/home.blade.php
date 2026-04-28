@@ -1,14 +1,14 @@
 @extends('layout')
 
 @section('content')
-<h2>Home</h2>
+<div class="cv-content">
+    <div class="cv-label">Bean of the Day</div>
+    <div class="cv-value">{{ $dailyBean->bean_name }}</div>
 
-@foreach($data as $d)
-    <div>
-        <h3>{{ $d->bean_name }}</h3>
-        <p>{{ $d->description }}</p>
-        <p>${{ $d->price }}</p>
-    </div>
-@endforeach
+    <div class="cv-label">Sale Price</div>
+    <div class="cv-value">${{ number_format($dailyBean->sale_price, 2) }}</div>
 
+    <div class="cv-label">Description</div>
+    <div class="cv-value">{{ $dailyBean->description }}</div>
+</div>
 @endsection
